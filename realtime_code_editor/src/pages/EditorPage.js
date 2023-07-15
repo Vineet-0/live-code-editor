@@ -68,23 +68,23 @@ const EditorPage = () => {
     <div className="minWrap">
       <div className="aside">
         <div className="asideInner">
-          <div className="logo">
-            <img
-              className="logoImage"
-              src="/code-sync.png"
+          <div className=" border-b-2 border-[#424242]">
+          <img
+              className=""
+              src="/Code_Sync_Logo.png"
               alt="Code-sync-logo"
-            />
+          />
           </div>
-          <h3>Connected</h3>
+          <h3 className="text-black mb-4 text-center font-bold bg-green-400 mt-[16px] p-[10px] rounded-lg">Connected</h3>
 
-          <div className="clientList">
+          <div className="grid grid-cols-3 gap-4">
             {clients.map((client) => (
               <Client key={client.socketId} username={client.username} />
             ))}
           </div>
         </div>
-        <button className="btn copyBtn" onClick={copyBtn}>Copy Room ID</button>
-        <a href="/" className="btn leaveBtn">Leave</a>
+        <button className="font-bold bg-blue-600 mt-[16px] p-[10px] rounded-lg" onClick={copyBtn}>Copy Room ID</button>
+        <a href="/" className="text-center font-bold bg-red-700 mt-[16px] p-[10px] rounded-lg">Leave</a>
       </div>
       <div className="editorwrap">
         <Editor socketRef={socketRef} roomId={roomId}/>
